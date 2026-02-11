@@ -1,7 +1,7 @@
-import HeroSection from "@/Components/HeroSection";
-import ServicesSection from "@/Components/ServicesSection";
-import WhyChooseUs from "@/Components/WhyChooseUs";
-import BookingSection from "@/Components/BookingSection";
+import HeroSection from "@/components/HeroSection";
+import ServicesSection from "@/components/ServicesSection";
+import WhyChooseUs from "@/components/WhyChooseUs";
+import BookingSection from "@/components/BookingSection";
 import MainLayout from "@/layouts/AppLayout";
 
 const Index = () => {
