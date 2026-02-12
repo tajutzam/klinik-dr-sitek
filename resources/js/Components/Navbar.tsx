@@ -1,14 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { Link, usePage } from "@inertiajs/react"; // Import Link dan usePage
 import { Phone, Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
+  // Mengambil URL saat ini langsung dari context Inertia
+  const { url } = usePage();
+
   const links = [
-    { label: "Home", href: "/#home" },
+    { label: "Home", href: "/" },
     { label: "About Us", href: "/about" },
-    { label: "Services", href: "/#services" },
-    { label: "Contact", href: "/#contact" },
+    { label: "Services", href: "/services" },
+    { label: "Contact", href: "/contact" },
   ];
 
   return (
@@ -19,14 +23,26 @@ const Navbar = () => {
           <p className="text-xs text-muted-foreground">General Practitioner</p>
         </div>
 
+        {/* Desktop Links */}
         <ul className="hidden md:flex items-center gap-8">
-          {links.map((l) => (
-            <li key={l.href}>
-              <a href={l.href} className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-                {l.label}
-              </a>
-            </li>
-          ))}
+          {links.map((l) => {
+            // Mengecek apakah URL saat ini cocok dengan href link
+            const isActive = url === l.href;
+
+            return (
+              <li key={l.href}>
+                <Link
+                  href={l.href}
+                  className={`text-sm font-medium transition-colors ${isActive
+                    ? "text-slate-950 font-bold"
+                    : "text-muted-foreground hover:text-slate-900"
+                    }`}
+                >
+                  {l.label}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
 
         <div className="hidden md:flex items-center gap-4">
@@ -34,9 +50,12 @@ const Navbar = () => {
             <Phone className="w-4 h-4" />
             +62 123 456 789
           </a>
-          <a href="#contact" className="bg-primary text-primary-foreground px-5 py-2.5 rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity">
+          <Link
+            href="/contact"
+            className="bg-primary text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-blue-600 transition-colors"
+          >
             Mari Konsultasi
-          </a>
+          </Link>
         </div>
 
         <button className="md:hidden" onClick={() => setMobileOpen(!mobileOpen)}>
@@ -47,13 +66,23 @@ const Navbar = () => {
       {mobileOpen && (
         <div className="md:hidden bg-background border-t border-border px-4 pb-4">
           {links.map((l) => (
-            <a key={l.href} href={l.href} onClick={() => setMobileOpen(false)} className="block py-3 text-sm font-medium text-muted-foreground hover:text-primary">
+            <Link
+              key={l.href}
+              href={l.href}
+              onClick={() => setMobileOpen(false)}
+              className={`block py-3 text-sm font-medium ${url === l.href ? "text-slate-950 font-bold" : "text-muted-foreground"
+                }`}
+            >
               {l.label}
-            </a>
+            </Link>
           ))}
-          <a href="#contact" className="mt-2 block text-center bg-primary text-primary-foreground px-5 py-2.5 rounded-lg text-sm font-semibold">
+          <Link
+            href="/contact"
+            onClick={() => setMobileOpen(false)}
+            className="mt-2 block text-center bg-primary text-white px-5 py-2.5 rounded-lg text-sm font-semibold"
+          >
             Mari Konsultasi
-          </a>
+          </Link>
         </div>
       )}
     </nav>

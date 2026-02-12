@@ -1,5 +1,6 @@
 import { CheckCircle, Star, Shield, Award } from "lucide-react";
-
+import CountUp from 'react-countup';
+import { TypeAnimation } from 'react-type-animation';
 
 import doctorImg from "@/../images/doctor-hero.jpg";
 
@@ -13,9 +14,27 @@ const HeroSection = () => {
               <Shield className="w-3.5 h-3.5 text-green-700" />
               22+ Tahun Pengalaman Medis
             </span>
-            <h1 className="text-4xl lg:text-5xl font-extrabold text-foreground leading-tight mb-6">
+
+            <h1 className="text-4xl lg:text-5xl font-extrabold text-foreground leading-tight mb-6 min-h-[120px] lg:min-h-[150px]">
               Pelayanan Kesehatan{" "}
-              <span className="text-primary">yang Terpercaya</span>
+              <span className="text-primary block md:inline">
+                <TypeAnimation
+                  sequence={[
+                    'yang Terpercaya',
+                    2000,
+                    'yang Profesional',
+                    2000,
+                    'yang Personal',
+                    2000,
+                    'untuk Keluarga',
+                    2000
+                  ]}
+                  wrapper="span"
+                  speed={50}
+                  repeat={Infinity}
+                  cursor={true}
+                />
+              </span>
             </h1>
             <p className="text-muted-foreground mb-8 max-w-md leading-relaxed">
               Dr. Sitek Ferryanto, dokter umum berpengalaman di Sintang Kalimantan Barat dengan pendekatan personal, ramah, dan profesional untuk kesehatan Anda sekeluarga.
@@ -23,12 +42,20 @@ const HeroSection = () => {
 
             <div className="flex gap-8 mb-8">
               {[
-                { value: "5000+", label: "Pasien Puas" },
-                { value: "22+", label: "Tahun Praktik" },
-                { value: "15+", label: "Layanan" },
+                { value: 5000, suffix: "+", label: "Pasien Puas" },
+                { value: 22, suffix: "+", label: "Tahun Praktik" },
+                { value: 15, suffix: "+", label: "Layanan" },
               ].map((s) => (
                 <div key={s.label}>
-                  <div className="text-2xl font-extrabold text-primary">{s.value}</div>
+                  <div className="text-2xl font-extrabold text-primary flex items-center">
+                    <CountUp
+                      end={s.value}
+                      duration={3}
+                      enableScrollSpy={true}
+                      scrollSpyOnce={true}
+                    />
+                    <span>{s.suffix}</span>
+                  </div>
                   <div className="text-xs text-muted-foreground">{s.label}</div>
                 </div>
               ))}

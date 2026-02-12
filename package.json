@@ -21,7 +21,11 @@
         "@vitejs/plugin-react": "^5.1.4",
         "lucide-react": "^0.563.0",
         "react": "^19.2.4",
+        "react-countup": "^6.5.3",
         "react-dom": "^19.2.4",
-        "typescript": "^5.9.3"
+        "react-fast-marquee": "^1.6.5",
+        "react-type-animation": "^3.2.0",
+        "typescript": "^5.9.3",
+        "typewriter-effect": "^2.22.0"
     }
 }
