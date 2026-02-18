@@ -31,6 +31,9 @@
     <link href="{{ asset('/') }}assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
     <link href="{{ asset('/') }}assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
     <!--end::Global Stylesheets Bundle-->
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 <!--end::Head-->
 <!--begin::Body-->
@@ -231,7 +234,67 @@
     <script src="{{ asset('/') }}assets/plugins/global/plugins.bundle.js"></script>
     <script src="{{ asset('/') }}assets/js/scripts.bundle.js"></script>
 
+    <link href="{{ asset('/') }}assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet"
+        type="text/css" />
+    <script src="{{ asset('/') }}assets/plugins/custom/datatables/datatables.bundle.js"></script>
+
     <script src="{{ asset('/') }}assets/plugins/custom/fullcalendar/fullcalendar.bundle.js"></script>
+
+    @stack('js')
+
+    @if(session('success'))
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success',
+                    text: @json(session('success')),
+                    confirmButtonColor: '#009ef7'
+                });
+            });
+        </script>
+    @endif
+
+
+    @if(session('error'))
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: @json(session('error')),
+                    confirmButtonColor: '#f1416c'
+                });
+            });
+        </script>
+    @endif
+
+
+    @if ($errors->any())
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+
+                let errorMessages = `
+                <ul style="text-align:left;">
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            `;
+
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Validation Error',
+                    html: errorMessages,
+                    confirmButtonColor: '#f1416c'
+                });
+
+            });
+        </script>
+    @endif
+
+
+
 
 </body>
 

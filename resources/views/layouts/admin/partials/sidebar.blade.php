@@ -8,11 +8,9 @@ menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500" id="kt_as
     </div>
 
     <div class="menu-item">
-        <a class="menu-link active" href="/dashboard">
+        <a class="menu-link {{ request()->routeIs('dashboard') ? 'active' : '' }}" href="{{ route('dashboard') }}">
             <span class="menu-icon">
-                <span class="svg-icon svg-icon-2">
-                    <i class="bi bi-speedometer2 fs-3"></i>
-                </span>
+                <i class="bi bi-speedometer2 fs-3"></i>
             </span>
             <span class="menu-title">Dashboard</span>
         </a>
@@ -25,8 +23,15 @@ menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500" id="kt_as
         </div>
     </div>
 
-    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-        <span class="menu-link">
+    @php
+        $masterActive = request()->routeIs('patients.*')
+            || request()->routeIs('medicines.*')
+            || request()->routeIs('medicine-categories.*');
+    @endphp
+
+    <div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ $masterActive ? 'show' : '' }}">
+
+        <span class="menu-link {{ $masterActive ? 'active' : '' }}">
             <span class="menu-icon">
                 <i class="bi bi-database fs-3"></i>
             </span>
@@ -37,7 +42,8 @@ menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500" id="kt_as
         <div class="menu-sub menu-sub-accordion menu-active-bg">
 
             <div class="menu-item">
-                <a class="menu-link" href="/patients">
+                <a class="menu-link {{ request()->routeIs('patients.*') ? 'active' : '' }}"
+                    href="{{ route('patients.index') }}">
                     <span class="menu-bullet">
                         <span class="bullet bullet-dot"></span>
                     </span>
@@ -46,7 +52,8 @@ menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500" id="kt_as
             </div>
 
             <div class="menu-item">
-                <a class="menu-link" href="/medicines">
+                <a class="menu-link {{ request()->routeIs('medicines.*') ? 'active' : '' }}"
+                    href="{{ route('medicines.index') }}">
                     <span class="menu-bullet">
                         <span class="bullet bullet-dot"></span>
                     </span>
@@ -55,7 +62,8 @@ menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500" id="kt_as
             </div>
 
             <div class="menu-item">
-                <a class="menu-link" href="/medicine-categories">
+                <a class="menu-link {{ request()->routeIs('medicine-categories.*') ? 'active' : '' }}"
+                    href="{{ route('medicine-categories.index') }}">
                     <span class="menu-bullet">
                         <span class="bullet bullet-dot"></span>
                     </span>
@@ -67,15 +75,19 @@ menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500" id="kt_as
     </div>
 
 
-    <!-- Visits Section -->
     <div class="menu-item">
         <div class="menu-content pt-8 pb-2">
             <span class="menu-section text-muted text-uppercase fs-8 ls-1">Transactions</span>
         </div>
     </div>
 
-    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-        <span class="menu-link">
+    @php
+        $visitActive = request()->routeIs('visits.*');
+    @endphp
+
+    <div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ $visitActive ? 'show' : '' }}">
+
+        <span class="menu-link {{ $visitActive ? 'active' : '' }}">
             <span class="menu-icon">
                 <i class="bi bi-clipboard-pulse fs-3"></i>
             </span>
@@ -84,18 +96,18 @@ menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500" id="kt_as
         </span>
 
         <div class="menu-sub menu-sub-accordion menu-active-bg">
-
             <div class="menu-item">
-                <a class="menu-link" href="/visits">
+                <a class="menu-link {{ request()->routeIs('visits.*') ? 'active' : '' }}"
+                    href="{{ route('visits.index') }}">
                     <span class="menu-bullet">
                         <span class="bullet bullet-dot"></span>
                     </span>
                     <span class="menu-title">Visit Records</span>
                 </a>
             </div>
-
         </div>
     </div>
+
 
     <div class="menu-item">
         <div class="menu-content pt-8 pb-2">
@@ -104,13 +116,14 @@ menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500" id="kt_as
     </div>
 
     <div class="menu-item">
-        <a class="menu-link" href="/reports">
+        <a class="menu-link {{ request()->routeIs('reports.*') ? 'active' : '' }}" href="{{ route('reports.index') }}">
             <span class="menu-icon">
                 <i class="bi bi-bar-chart-line fs-3"></i>
             </span>
             <span class="menu-title">Reports</span>
         </a>
     </div>
+
 
     <div class="menu-item">
         <div class="menu-content pt-8 pb-2">
@@ -119,7 +132,7 @@ menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500" id="kt_as
     </div>
 
     <div class="menu-item">
-        <a class="menu-link" href="/users">
+        <a class="menu-link {{ request()->routeIs('users.*') ? 'active' : '' }}" href="{{ route('users.index') }}">
             <span class="menu-icon">
                 <i class="bi bi-people fs-3"></i>
             </span>
