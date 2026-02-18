@@ -1,4 +1,3 @@
-import React from 'react';
 import { Zap, MessageCircle, ClipboardCheck, Users2 } from 'lucide-react';
 import CountUp from 'react-countup';
 
