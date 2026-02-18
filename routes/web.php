@@ -21,7 +21,11 @@ Route::prefix('admin')
             ->name('dashboard');
 
 
+        Route::get('patients/datatable', [PatientController::class, 'datatable'])
+            ->name('patients.datatable');
         Route::resource('patients', PatientController::class);
+        Route::get('medicines/datatable', [MedicineController::class, 'datatable'])
+            ->name('medicines.datatable');
         Route::resource('medicines', MedicineController::class);
 
 

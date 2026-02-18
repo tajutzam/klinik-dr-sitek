@@ -274,12 +274,12 @@
             document.addEventListener('DOMContentLoaded', function () {
 
                 let errorMessages = `
-                    <ul style="text-align:left;">
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                `;
+                        <ul style="text-align:left;">
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    `;
 
                 Swal.fire({
                     icon: 'error',

@@ -31,7 +31,7 @@ menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500" id="kt_as
 
     <div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ $masterActive ? 'show' : '' }}">
 
-        <span class="menu-link {{ $masterActive ? 'active' : '' }}">
+        <span class="menu-link">
             <span class="menu-icon">
                 <i class="bi bi-database fs-3"></i>
             </span>
@@ -87,7 +87,7 @@ menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500" id="kt_as
 
     <div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ $visitActive ? 'show' : '' }}">
 
-        <span class="menu-link {{ $visitActive ? 'active' : '' }}">
+        <span class="menu-link">
             <span class="menu-icon">
                 <i class="bi bi-clipboard-pulse fs-3"></i>
             </span>
