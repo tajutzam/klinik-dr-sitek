@@ -230,7 +230,6 @@
         </span>
     </div>
 
-
     <script src="{{ asset('/') }}assets/plugins/global/plugins.bundle.js"></script>
     <script src="{{ asset('/') }}assets/js/scripts.bundle.js"></script>
 
@@ -275,12 +274,12 @@
             document.addEventListener('DOMContentLoaded', function () {
 
                 let errorMessages = `
-                <ul style="text-align:left;">
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            `;
+                    <ul style="text-align:left;">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                `;
 
                 Swal.fire({
                     icon: 'error',
