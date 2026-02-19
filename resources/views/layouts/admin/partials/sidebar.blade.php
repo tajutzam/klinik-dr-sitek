@@ -1,6 +1,7 @@
 <div class="menu menu-column menu-title-gray-800 menu-state-title-primary 
 menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500" id="kt_aside_menu" data-kt-menu="true">
 
+    <!-- Dashboard -->
     <div class="menu-item">
         <div class="menu-content pb-2">
             <span class="menu-section text-muted text-uppercase fs-8 ls-1">Dashboard</span>
@@ -17,9 +18,10 @@ menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500" id="kt_as
     </div>
 
 
+    <!-- Master Data -->
     <div class="menu-item">
         <div class="menu-content pt-8 pb-2">
-            <span class="menu-section text-muted text-uppercase fs-8 ls-1">Master Data</span>
+            <span class="menu-section text-muted text-uppercase fs-8 ls-1">Data Master</span>
         </div>
     </div>
 
@@ -35,7 +37,7 @@ menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500" id="kt_as
             <span class="menu-icon">
                 <i class="bi bi-database fs-3"></i>
             </span>
-            <span class="menu-title">Master Data</span>
+            <span class="menu-title">Data Master</span>
             <span class="menu-arrow"></span>
         </span>
 
@@ -47,7 +49,7 @@ menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500" id="kt_as
                     <span class="menu-bullet">
                         <span class="bullet bullet-dot"></span>
                     </span>
-                    <span class="menu-title">Patients</span>
+                    <span class="menu-title">Pasien</span>
                 </a>
             </div>
 
@@ -57,7 +59,7 @@ menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500" id="kt_as
                     <span class="menu-bullet">
                         <span class="bullet bullet-dot"></span>
                     </span>
-                    <span class="menu-title">Medicines</span>
+                    <span class="menu-title">Obat</span>
                 </a>
             </div>
 
@@ -67,7 +69,7 @@ menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500" id="kt_as
                     <span class="menu-bullet">
                         <span class="bullet bullet-dot"></span>
                     </span>
-                    <span class="menu-title">Medicine Categories</span>
+                    <span class="menu-title">Kategori Obat</span>
                 </a>
             </div>
 
@@ -75,9 +77,10 @@ menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500" id="kt_as
     </div>
 
 
+    <!-- Transaksi -->
     <div class="menu-item">
         <div class="menu-content pt-8 pb-2">
-            <span class="menu-section text-muted text-uppercase fs-8 ls-1">Transactions</span>
+            <span class="menu-section text-muted text-uppercase fs-8 ls-1">Transaksi</span>
         </div>
     </div>
 
@@ -91,7 +94,7 @@ menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500" id="kt_as
             <span class="menu-icon">
                 <i class="bi bi-clipboard-pulse fs-3"></i>
             </span>
-            <span class="menu-title">Visits</span>
+            <span class="menu-title">Kunjungan Pasien</span>
             <span class="menu-arrow"></span>
         </span>
 
@@ -102,16 +105,17 @@ menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500" id="kt_as
                     <span class="menu-bullet">
                         <span class="bullet bullet-dot"></span>
                     </span>
-                    <span class="menu-title">Visit Records</span>
+                    <span class="menu-title">Data Kunjungan</span>
                 </a>
             </div>
         </div>
     </div>
 
 
+    <!-- Laporan -->
     <div class="menu-item">
         <div class="menu-content pt-8 pb-2">
-            <span class="menu-section text-muted text-uppercase fs-8 ls-1">Reports</span>
+            <span class="menu-section text-muted text-uppercase fs-8 ls-1">Laporan</span>
         </div>
     </div>
 
@@ -120,14 +124,15 @@ menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500" id="kt_as
             <span class="menu-icon">
                 <i class="bi bi-bar-chart-line fs-3"></i>
             </span>
-            <span class="menu-title">Reports</span>
+            <span class="menu-title">Laporan</span>
         </a>
     </div>
 
 
+    <!-- Administrasi -->
     <div class="menu-item">
         <div class="menu-content pt-8 pb-2">
-            <span class="menu-section text-muted text-uppercase fs-8 ls-1">Administration</span>
+            <span class="menu-section text-muted text-uppercase fs-8 ls-1">Administrasi</span>
         </div>
     </div>
 
@@ -136,7 +141,7 @@ menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500" id="kt_as
             <span class="menu-icon">
                 <i class="bi bi-people fs-3"></i>
             </span>
-            <span class="menu-title">User Management</span>
+            <span class="menu-title">Manajemen Pengguna</span>
         </a>
     </div>
 
