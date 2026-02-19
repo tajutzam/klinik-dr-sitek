@@ -58,6 +58,9 @@ Route::prefix('admin')
             ->name('reports.medicines');
 
 
+        Route::get('/ajax/patients', [VisitController::class, 'searchPatients'])
+            ->name('ajax.patients');
+
         /*
         |--------------------------------------------------------------------------
         | User Management

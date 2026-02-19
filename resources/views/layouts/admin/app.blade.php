@@ -32,8 +32,10 @@
     <link href="{{ asset('/') }}assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
     <!--end::Global Stylesheets Bundle-->
 
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+    @stack('css')
 </head>
 <!--end::Head-->
 <!--begin::Body-->
@@ -274,12 +276,12 @@
             document.addEventListener('DOMContentLoaded', function () {
 
                 let errorMessages = `
-                        <ul style="text-align:left;">
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    `;
+                            <ul style="text-align:left;">
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        `;
 
                 Swal.fire({
                     icon: 'error',
