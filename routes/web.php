@@ -19,9 +19,17 @@ Route::middleware('guest')->group(function () {
     Route::post('/login', [AuthController::class, 'login']);
 });
 
+Route::middleware('auth')->group(function () {
+    Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+});
+
 Route::prefix('admin')
     ->middleware('auth')
     ->group(function () {
+
+
+
+
         Route::get('/', [DashboardController::class, 'index'])
             ->name('dashboard');
 
@@ -29,6 +37,7 @@ Route::prefix('admin')
         Route::get('patients/datatable', [PatientController::class, 'datatable'])
             ->name('patients.datatable');
         Route::resource('patients', PatientController::class);
+        Route::post('/ajax/patients-quick-store', [PatientController::class, 'quickStore'])->name('ajax.patients.store');
         Route::get('medicines/datatable', [MedicineController::class, 'datatable'])
             ->name('medicines.datatable');
         Route::resource('medicines', MedicineController::class);
@@ -40,6 +49,12 @@ Route::prefix('admin')
             [MedicineCategoryController::class, 'datatable']
         )
             ->name('medicine-categories.datatable');
+
+
+
+        Route::get('visits/datatable', [VisitController::class, 'datatable'])
+            ->name('visits.datatable');
+        Route::get('visits/summary', [VisitController::class, 'summary'])->name('visits.summary');
 
         Route::resource('visits', VisitController::class);
 
@@ -54,12 +69,19 @@ Route::prefix('admin')
         Route::get('reports/visits', [ReportController::class, 'visits'])
             ->name('reports.visits');
 
+        Route::get('visits/{id}/print', [VisitController::class, 'print'])
+            ->name('visits.print');
+
         Route::get('reports/medicines', [ReportController::class, 'medicines'])
             ->name('reports.medicines');
 
 
         Route::get('/ajax/patients', [VisitController::class, 'searchPatients'])
             ->name('ajax.patients');
+
+        Route::get('/ajax/medicines', [VisitController::class, 'searchMedicines'])
+            ->name('ajax.medicines');
+
 
         /*
         |--------------------------------------------------------------------------

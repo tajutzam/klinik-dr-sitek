@@ -194,7 +194,7 @@
                 $('#edit_stock').val($(this).data('stock'));
                 $('#edit_minimum_stock').val($(this).data('min'));
 
-                $('#editForm').attr('action', '/medicines/' + id);
+                $('#editForm').attr('action', '/admin/medicines/' + id);
 
                 $('#editModal').modal('show');
             });

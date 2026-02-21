@@ -115,4 +115,24 @@ class PatientController extends Controller
             ->route('patients.index')
             ->with('success', 'Patient deleted successfully.');
     }
+
+
+    public function quickStore(Request $request)
+    {
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'national_id' => 'nullable|unique:patients,national_id',
+            'phone_number' => 'nullable|string|max:20',
+            'date_of_birth' => 'nullable|date',
+            'gender' => 'nullable|in:male,female',
+            'address' => 'nullable|string',
+        ]);
+
+        $patient = Patient::create($validated);
+
+        return response()->json([
+            'id' => $patient->id,
+            'text' => $patient->name . ($patient->phone_number ? " ({$patient->phone_number})" : "")
+        ]);
+    }
 }

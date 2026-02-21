@@ -190,7 +190,7 @@
                 $('#edit_phone_number').val($(this).data('phone'));
                 $('#edit_address').val($(this).data('address'));
 
-                $('#editForm').attr('action', '/patients/' + id);
+                $('#editForm').attr('action', '/admin/patients/' + id);
 
                 $('#editModal').modal('show');
             });

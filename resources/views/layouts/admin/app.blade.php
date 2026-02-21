@@ -4,26 +4,17 @@
 
 <head>
     <base href="">
-    <title>Metronic - the world's #1 selling Bootstrap Admin Theme Ecosystem for HTML, Vue, React, Angular &amp; Laravel
-        by Keenthemes</title>
+    <title>DR - Sitek</title>
     <meta name="description"
         content="The most advanced Bootstrap Admin Theme on Themeforest trusted by 94,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue &amp; Laravel versions. Grab your copy now and get life-time updates for free." />
-    <meta name="keywords"
-        content="Metronic, bootstrap, bootstrap 5, Angular, VueJs, React, Laravel, admin themes, web design, figma, web development, free templates, free admin themes, bootstrap theme, bootstrap template, bootstrap dashboard, bootstrap dak mode, bootstrap button, bootstrap datepicker, bootstrap timepicker, fullcalendar, datatables, flaticon" />
+    <meta name="keywords" content="Dr-sitek" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="utf-8" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="article" />
-    <meta property="og:title"
-        content="Metronic - Bootstrap 5 HTML, VueJS, React, Angular &amp; Laravel Admin Dashboard Theme" />
-    <meta property="og:url" content="https://keenthemes.com/metronic" />
-    <meta property="og:site_name" content="Keenthemes | Metronic" />
-    <link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
-    <link rel="shortcut icon" href="{{ asset('/') }}assets/media/logos/favicon.ico" />
-    <!--begin::Fonts-->
+    <meta property="og:title" content="Dr-sitek" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
     <!--end::Fonts-->
-    <!--begin::Page Vendor Stylesheets(used by this page)-->
     <link href="{{ asset('/') }}assets/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet"
         type="text/css" />
     <!--end::Page Vendor Stylesheets-->
@@ -57,13 +48,14 @@
                     <div class="aside-user d-flex align-items-sm-center justify-content-center py-5">
                         <!--begin::Symbol-->
                         <div class="symbol symbol-50px">
-                            <img src="{{ asset('/') }}assets/media/avatars/150-26.jpg" alt="" />
+                            <img src="{{ asset('/') }}profile.png" alt="" />
                         </div>
                         <div class="aside-user-info flex-row-fluid flex-wrap ms-5">
                             <div class="d-flex">
-                                <div class="flex-grow-1 me-2">
-                                    <a href="#" class="text-white text-hover-primary fs-6 fw-bold">Paul Melone</a>
-                                    <span class="text-gray-600 fw-bold d-block fs-8 mb-1">Python Dev</span>
+                                <div class="grow me-2">
+                                    <a href="#"
+                                        class="text-white text-hover-primary fs-6 fw-bold">{{ auth()->user()->name }}</a>
+                                    <span class="text-gray-600 fw-bold d-block fs-8 mb-1">Doctor</span>
                                     <div class="d-flex align-items-center text-success fs-9">
                                         <span class="bullet bullet-dot bg-success me-1"></span>online
                                     </div>
@@ -89,16 +81,14 @@
                                         <div class="menu-item px-3">
                                             <div class="menu-content d-flex align-items-center px-3">
                                                 <div class="symbol symbol-50px me-5">
-                                                    <img alt="Logo"
-                                                        src="{{ asset('/') }}assets/media/avatars/150-26.jpg" />
+                                                    <img alt="Logo" src="{{ asset('/') }}profile.png" />
                                                 </div>
                                                 <div class="d-flex flex-column">
-                                                    <div class="fw-bolder d-flex align-items-center fs-5">Max Smith
-                                                        <span
-                                                            class="badge badge-light-success fw-bolder fs-8 px-2 py-1 ms-2">Pro</span>
+                                                    <div class="fw-bolder d-flex align-items-center fs-5">
+                                                        {{auth()->user()->name}}
                                                     </div>
                                                     <a href="#"
-                                                        class="fw-bold text-muted text-hover-primary fs-7">max@kt.com</a>
+                                                        class="fw-bold text-muted text-hover-primary fs-7">{{auth()->user()->email}}</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -107,8 +97,8 @@
                                                 class="menu-link px-5">Account Settings</a>
                                         </div>
                                         <div class="menu-item px-5">
-                                            <a href="../../demo8/dist/authentication/flows/basic/sign-in.html"
-                                                class="menu-link px-5">Sign Out</a>
+                                            <a href="{{ route('logout', ['id' => 1]) }}" class="menu-link px-5">Sign
+                                                Out</a>
                                         </div>
                                     </div>
                                 </div>
@@ -139,8 +129,7 @@
                     <!--begin::Brand-->
                     <div class="header-brand">
                         <a href="/admin">
-                            <img alt="Logo" src="{{ asset('/') }}assets/media/logos/logo-1-dark.svg"
-                                class="h-25px h-lg-25px" />
+                            <img alt="Logo" src="{{ asset('/') }}logo.png" class="h-25px h-lg-25px" />
                         </a>
                         <div id="kt_aside_toggle"
                             class="btn btn-icon w-auto px-0 btn-active-color-primary aside-minimize"
@@ -276,12 +265,12 @@
             document.addEventListener('DOMContentLoaded', function () {
 
                 let errorMessages = `
-                            <ul style="text-align:left;">
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        `;
+                                                                                    <ul style="text-align:left;">
+                                                                                        @foreach ($errors->all() as $error)
+                                                                                            <li>{{ $error }}</li>
+                                                                                        @endforeach
+                                                                                    </ul>
+                                                                                `;
 
                 Swal.fire({
                     icon: 'error',
@@ -293,11 +282,6 @@
             });
         </script>
     @endif
-
-
-
-
 </body>
-
 
 </html>
