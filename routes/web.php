@@ -66,14 +66,13 @@ Route::prefix('admin')
         Route::get('reports', [ReportController::class, 'index'])
             ->name('reports.index');
 
-        Route::get('reports/visits', [ReportController::class, 'visits'])
-            ->name('reports.visits');
 
-        Route::get('visits/{id}/print', [VisitController::class, 'print'])
-            ->name('visits.print');
+        Route::get('reports', [ReportController::class, 'index'])->name('reports.index');
+        Route::get('reports/data', [ReportController::class, 'data'])->name('reports.data');
+        Route::get('reports/print', [ReportController::class, 'print'])->name('reports.print');
+        Route::get('reports/summary', [ReportController::class, 'summary'])
+            ->name('reports.summary');
 
-        Route::get('reports/medicines', [ReportController::class, 'medicines'])
-            ->name('reports.medicines');
 
 
         Route::get('/ajax/patients', [VisitController::class, 'searchPatients'])
@@ -89,4 +88,5 @@ Route::prefix('admin')
         |--------------------------------------------------------------------------
         */
         Route::resource('users', UserController::class);
+        Route::get('users-data', [UserController::class, 'data'])->name('users.data');
     });
