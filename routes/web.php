@@ -55,7 +55,7 @@ Route::prefix('admin')
         Route::get('visits/datatable', [VisitController::class, 'datatable'])
             ->name('visits.datatable');
         Route::get('visits/summary', [VisitController::class, 'summary'])->name('visits.summary');
-
+        Route::get('visits/print/{id}', [VisitController::class, 'print'])->name('visits.print');
         Route::resource('visits', VisitController::class);
 
 
