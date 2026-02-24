@@ -72,9 +72,6 @@ Route::prefix('admin')
         Route::get('reports/print', [ReportController::class, 'print'])->name('reports.print');
         Route::get('reports/summary', [ReportController::class, 'summary'])
             ->name('reports.summary');
-
-
-
         Route::get('/ajax/patients', [VisitController::class, 'searchPatients'])
             ->name('ajax.patients');
 
@@ -89,4 +86,8 @@ Route::prefix('admin')
         */
         Route::resource('users', UserController::class);
         Route::get('users-data', [UserController::class, 'data'])->name('users.data');
+        Route::get('users-setting', [UserController::class, 'setting'])->name('users.setting');
+        Route::put('users-setting/update', [UserController::class, 'updateProfile'])->name('admin.profile.update');
+        Route::put('users-setting/password/update', [UserController::class, 'updatePassword'])->name('admin.password.update');
+
     });

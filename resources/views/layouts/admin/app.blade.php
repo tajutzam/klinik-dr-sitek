@@ -93,8 +93,8 @@
                                             </div>
                                         </div>
                                         <div class="menu-item px-5 my-1">
-                                            <a href="../../demo8/dist/account/settings.html"
-                                                class="menu-link px-5">Account Settings</a>
+                                            <a href="{{ route('users.setting') }}" class="menu-link px-5">Account
+                                                Settings</a>
                                         </div>
                                         <div class="menu-item px-5">
                                             <a href="{{ route('logout', ['id' => 1]) }}" class="menu-link px-5">Sign
@@ -265,12 +265,12 @@
             document.addEventListener('DOMContentLoaded', function () {
 
                 let errorMessages = `
-                                                                                    <ul style="text-align:left;">
-                                                                                        @foreach ($errors->all() as $error)
-                                                                                            <li>{{ $error }}</li>
-                                                                                        @endforeach
-                                                                                    </ul>
-                                                                                `;
+                                                                                        <ul style="text-align:left;">
+                                                                                            @foreach ($errors->all() as $error)
+                                                                                                <li>{{ $error }}</li>
+                                                                                            @endforeach
+                                                                                        </ul>
+                                                                                    `;
 
                 Swal.fire({
                     icon: 'error',
