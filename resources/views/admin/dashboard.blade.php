@@ -1,6 +1,5 @@
 @extends('layouts.admin.app')
 
-
 @push('css')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
@@ -21,9 +20,7 @@
             </div>
         </div>
 
-        {{-- Stats Widgets --}}
         <div class="row g-6 mb-10">
-            {{-- Total Pasien --}}
             <div class="col-md-6 col-lg-3">
                 <div class="card card-flush h-md-100 border-0 shadow-sm hover-elevate-up" style="border-radius: 1.25rem">
                     <div class="card-header pt-6">
@@ -38,7 +35,6 @@
                 </div>
             </div>
 
-            {{-- Total Obat & Health Indicator --}}
             <div class="col-md-6 col-lg-3">
                 <div class="card card-flush h-md-100 border-0 shadow-sm hover-elevate-up" style="border-radius: 1.25rem">
                     <div class="card-header pt-6">
@@ -51,19 +47,6 @@
                         </div>
                     </div>
                     <div class="card-body d-flex flex-column justify-content-end pb-7">
-                        @php
-
-                        @endphp
-                        <div class="d-flex flex-column w-100">
-                            <div class="d-flex justify-content-between mb-2">
-                                <span class="text-gray-800 fw-bold fs-8">Kesehatan Inventaris</span>
-                                <span class="text-muted fw-bold fs-8">{{ number_format($stockHealth, 0) }}%</span>
-                            </div>
-                            <div class="h-6px bg-light-{{ $stockHealth < 50 ? 'danger' : 'success' }} rounded">
-                                <div class="bg-{{ $stockHealth < 50 ? 'danger' : 'success' }} h-6px rounded"
-                                    style="width: {{ $stockHealth }}%"></div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -86,7 +69,21 @@
                                     <i class="bi bi-calendar-check fs-2 text-white"></i>
                                 </div>
                             </div>
-                            <span class="text-white opacity-75 fw-semibold fs-7">Aktivitas bulan ini</span>
+                            <div class="d-flex flex-column">
+                                <span class="text-white opacity-75 fw-semibold fs-7">Aktivitas bulan ini</span>
+                                @if($visitsChange >= 0)
+                                    <span class="text-success fw-bold fs-8">
+                                        <i class="bi bi-arrow-up me-1 text-success"></i>{{ number_format($visitsChange, 1) }}%
+                                        vs bulan lalu
+                                    </span>
+                                @else
+                                    <span class="text-danger fw-bold fs-8">
+                                        <i
+                                            class="bi bi-arrow-down me-1 text-danger"></i>{{ number_format(abs($visitsChange), 1) }}%
+                                        vs bulan lalu
+                                    </span>
+                                @endif
+                            </div>
                         </div>
                     </div>
                     <div class="position-absolute bottom-0 end-0 opacity-10 me-n5 mb-n5">
@@ -130,14 +127,13 @@
         </div>
 
         <div class="row g-6 mb-10">
-            {{-- Chart --}}
             <div class="col-xl-8">
                 <div class="card card-flush h-xl-100 shadow-sm border-0" style="border-radius: 1.25rem">
                     <div class="card-header pt-7">
                         <h3 class="card-title align-items-start flex-column">
                             <span class="card-label fw-bold text-gray-800">Tren Kunjungan Harian</span>
-                            <span class="text-gray-500 mt-1 fw-semibold fs-7">Analisis data kunjungan pasien secara
-                                real-time</span>
+                            <span class="text-gray-500 mt-1 fw-semibold fs-7">Analisis data kunjungan pasien bulan
+                                ini</span>
                         </h3>
                     </div>
                     <div class="card-body pt-2">
@@ -146,7 +142,6 @@
                 </div>
             </div>
 
-            {{-- Alert Stok --}}
             <div class="col-xl-4">
                 <div class="card card-flush h-xl-100 shadow-sm border-0" style="border-radius: 1.25rem">
                     <div class="card-header pt-7">
@@ -190,7 +185,119 @@
             </div>
         </div>
 
-        {{-- Tabel Aktivitas --}}
+        <div class="row g-6 mb-10">
+            <div class="col-12">
+                <div class="card card-flush shadow-sm border-0" style="border-radius: 1.25rem">
+                    <div class="card-header pt-7">
+                        <h3 class="card-title align-items-start flex-column">
+                            <span class="card-label fw-bold text-gray-800">Perbandingan Bulanan</span>
+                            <span class="text-gray-500 mt-1 fw-semibold fs-7">Revenue dan kunjungan pasien — 6 bulan
+                                terakhir</span>
+                        </h3>
+                        <div class="card-toolbar">
+                            <div class="d-flex gap-5">
+                                <div class="d-flex align-items-center gap-2">
+                                    <span class="rounded-2 d-inline-block"
+                                        style="width: 14px; height: 14px; background: #378ADD;"></span>
+                                    <span class="text-muted fw-semibold fs-8">Revenue</span>
+                                </div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <span class="rounded-2 d-inline-block"
+                                        style="width: 14px; height: 14px; background: #1D9E75;"></span>
+                                    <span class="text-muted fw-semibold fs-8">Kunjungan</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-body pt-4 pb-0">
+                        <div class="row g-4 mb-6">
+                            @php
+                                $compRevArr = $comparisonRevenue->toArray();
+                                $compVisArr = $comparisonVisits->toArray();
+                                $compLabArr = $comparisonLabels->toArray();
+                                $lastIdx = count($compRevArr) - 1;
+                                $prevIdx = $lastIdx - 1;
+
+                                $revDiff = $prevIdx >= 0 && $compRevArr[$prevIdx] > 0
+                                    ? (($compRevArr[$lastIdx] - $compRevArr[$prevIdx]) / $compRevArr[$prevIdx]) * 100
+                                    : ($compRevArr[$lastIdx] > 0 ? 100 : 0);
+
+                                $visDiff = $prevIdx >= 0 && $compVisArr[$prevIdx] > 0
+                                    ? (($compVisArr[$lastIdx] - $compVisArr[$prevIdx]) / $compVisArr[$prevIdx]) * 100
+                                    : ($compVisArr[$lastIdx] > 0 ? 100 : 0);
+
+                                $bestRevIdx = array_search(max($compRevArr), $compRevArr);
+                                $bestVisIdx = array_search(max($compVisArr), $compVisArr);
+                            @endphp
+
+                            <div class="col-6 col-md-3">
+                                <div class="bg-light-primary rounded-12px p-4 h-100">
+                                    <div class="text-muted fw-semibold fs-8 mb-1">Revenue Bulan Ini</div>
+                                    <div class="fw-bold text-gray-900 fs-5">Rp
+                                        {{ number_format($compRevArr[$lastIdx], 0, ',', '.') }}</div>
+                                    <div class="mt-2">
+                                        @if($revDiff >= 0)
+                                            <span class="badge badge-light-success fs-9 px-2 py-1">
+                                                <i class="bi bi-arrow-up me-1"></i>{{ number_format($revDiff, 1) }}%
+                                            </span>
+                                        @else
+                                            <span class="badge badge-light-danger fs-9 px-2 py-1">
+                                                <i class="bi bi-arrow-down me-1"></i>{{ number_format(abs($revDiff), 1) }}%
+                                            </span>
+                                        @endif
+                                        <span class="text-muted fs-9 ms-1">vs {{ $compLabArr[$prevIdx] ?? '-' }}</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-6 col-md-3">
+                                <div class="bg-light-success rounded-12px p-4 h-100">
+                                    <div class="text-muted fw-semibold fs-8 mb-1">Kunjungan Bulan Ini</div>
+                                    <div class="fw-bold text-gray-900 fs-5">{{ number_format($compVisArr[$lastIdx]) }}
+                                        pasien</div>
+                                    <div class="mt-2">
+                                        @if($visDiff >= 0)
+                                            <span class="badge badge-light-success fs-9 px-2 py-1">
+                                                <i class="bi bi-arrow-up me-1"></i>{{ number_format($visDiff, 1) }}%
+                                            </span>
+                                        @else
+                                            <span class="badge badge-light-danger fs-9 px-2 py-1">
+                                                <i class="bi bi-arrow-down me-1"></i>{{ number_format(abs($visDiff), 1) }}%
+                                            </span>
+                                        @endif
+                                        <span class="text-muted fs-9 ms-1">vs {{ $compLabArr[$prevIdx] ?? '-' }}</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-6 col-md-3">
+                                <div class="bg-light rounded-12px p-4 h-100">
+                                    <div class="text-muted fw-semibold fs-8 mb-1">Bulan Terbaik (Revenue)</div>
+                                    <div class="fw-bold text-gray-900 fs-5">{{ $compLabArr[$bestRevIdx] }}</div>
+                                    <div class="text-muted fs-8 mt-1">Rp
+                                        {{ number_format($compRevArr[$bestRevIdx], 0, ',', '.') }}</div>
+                                </div>
+                            </div>
+
+                            <div class="col-6 col-md-3">
+                                <div class="bg-light rounded-12px p-4 h-100">
+                                    <div class="text-muted fw-semibold fs-8 mb-1">Bulan Terbaik (Kunjungan)</div>
+                                    <div class="fw-bold text-gray-900 fs-5">{{ $compLabArr[$bestVisIdx] }}</div>
+                                    <div class="text-muted fs-8 mt-1">{{ number_format($compVisArr[$bestVisIdx]) }} pasien
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <canvas id="comparisonChart" style="height: 320px; width: 100%"></canvas>
+                    </div>
+                    <div class="card-body pt-3 pb-7"></div>
+                </div>
+            </div>
+        </div>
+
+        {{-- Row 4: Recent Activity Table --}}
         <div class="card card-flush shadow-sm border-0 mb-10" style="border-radius: 1.25rem">
             <div class="card-header pt-7">
                 <h3 class="card-title align-items-start flex-column">
@@ -289,8 +396,9 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const ctx = document.getElementById('visitChart').getContext('2d');
 
+            // ── Daily Visit Chart ──────────────────────────────────────────────
+            const ctx = document.getElementById('visitChart').getContext('2d');
             const gradient = ctx.createLinearGradient(0, 0, 0, 300);
             gradient.addColorStop(0, 'rgba(0, 158, 247, 0.2)');
             gradient.addColorStop(1, 'rgba(0, 158, 247, 0)');
@@ -317,14 +425,91 @@
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
-                    plugins: {
-                        legend: { display: false }
-                    },
+                    plugins: { legend: { display: false } },
                     scales: {
                         y: {
                             beginAtZero: true,
                             grid: { color: '#F1F1F4', drawBorder: false },
                             ticks: { precision: 0, color: '#A1A5B7' }
+                        },
+                        x: {
+                            grid: { display: false },
+                            ticks: { color: '#A1A5B7' }
+                        }
+                    }
+                }
+            });
+
+            // ── Monthly Comparison Chart ───────────────────────────────────────
+            const ctxCmp = document.getElementById('comparisonChart').getContext('2d');
+
+            new Chart(ctxCmp, {
+                data: {
+                    labels: {!! json_encode($comparisonLabels) !!},
+                    datasets: [
+                        {
+                            type: 'bar',
+                            label: 'Revenue',
+                            data: {!! json_encode($comparisonRevenue) !!},
+                            backgroundColor: '#378ADD',
+                            borderRadius: 6,
+                            yAxisID: 'yRevenue',
+                            order: 2
+                        },
+                        {
+                            type: 'line',
+                            label: 'Kunjungan',
+                            data: {!! json_encode($comparisonVisits) !!},
+                            borderColor: '#1D9E75',
+                            backgroundColor: 'rgba(29,158,117,0.08)',
+                            borderWidth: 2.5,
+                            borderDash: [6, 3],
+                            pointBackgroundColor: '#1D9E75',
+                            pointBorderColor: '#fff',
+                            pointBorderWidth: 2,
+                            pointRadius: 5,
+                            pointHoverRadius: 7,
+                            tension: 0.35,
+                            fill: true,
+                            yAxisID: 'yVisits',
+                            order: 1
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    interaction: { mode: 'index', intersect: false },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function (ctx) {
+                                    if (ctx.dataset.label === 'Revenue') {
+                                        return ' Revenue: Rp ' + new Intl.NumberFormat('id-ID').format(ctx.parsed.y);
+                                    }
+                                    return ' Kunjungan: ' + ctx.parsed.y + ' pasien';
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        yRevenue: {
+                            type: 'linear',
+                            position: 'left',
+                            beginAtZero: true,
+                            grid: { color: '#F1F1F4', drawBorder: false },
+                            ticks: {
+                                color: '#A1A5B7',
+                                callback: v => 'Rp ' + new Intl.NumberFormat('id-ID', { notation: 'compact' }).format(v)
+                            }
+                        },
+                        yVisits: {
+                            type: 'linear',
+                            position: 'right',
+                            beginAtZero: true,
+                            grid: { display: false },
+                            ticks: { precision: 0, color: '#1D9E75' }
                         },
                         x: {
                             grid: { display: false },
