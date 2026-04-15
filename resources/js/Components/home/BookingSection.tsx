@@ -37,7 +37,7 @@ const BookingSection = () => {
               </ul>
 
               <a
-                href="https://wa.me/62123456789"
+                href="https://wa.me/6289613943395"
                 className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-8 py-4 rounded-xl font-bold hover:opacity-90 transition-all shadow-lg shadow-primary/25"
               >
                 <MessageCircle className="w-5 h-5" />

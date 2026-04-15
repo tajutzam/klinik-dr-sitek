@@ -30,11 +30,7 @@ const Experince = () => {
                     <ul className="space-y-4">
                         <li className="flex items-center gap-3 text-slate-600">
                             <span className="w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0" />
-                            General Practice Specialization
-                        </li>
-                        <li className="flex items-center gap-3 text-slate-600">
-                            <span className="w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0" />
-                            Continuous Medical Education (CME) certified
+                            Lulusan FKIK Ukrida
                         </li>
                     </ul>
                 </div>
@@ -56,11 +52,11 @@ const Experince = () => {
                         </li>
                         <li className="flex items-center gap-3 text-slate-600">
                             <span className="w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0" />
-                            Expertise in Pediatric & Geriatric Care
+                            Experienced in Treating Patients of All Ages
                         </li>
                         <li className="flex items-center gap-3 text-slate-600">
                             <span className="w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0" />
-                            Preventive Medicine & Health Screening
+                            Focus on Preventive Care & Basic Health Services
                         </li>
                     </ul>
                 </div>

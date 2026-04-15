@@ -48,7 +48,7 @@ const Navbar = () => {
         <div className="hidden md:flex items-center gap-4">
           <a href="tel:+62123456789" className="flex items-center gap-2 text-sm text-foreground font-medium">
             <Phone className="w-4 h-4" />
-            +62 123 456 789
+            +62 896-1394-3395
           </a>
           <Link
             href="/contact"

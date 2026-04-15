@@ -1,5 +1,5 @@
 import React from 'react';
-import doctorImg from "@/../images/doctor-hero.jpg";
+import doctorImg from "@/../images/doctor-hero.jpeg";
 import { IdCardLanyard } from 'lucide-react';
 
 

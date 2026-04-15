@@ -1,48 +1,48 @@
 {
-  "_AppLayout-BW3E-KgL.js": {
-    "file": "assets/AppLayout-BW3E-KgL.js",
+  "_AppLayout-Ibw4oj2Z.js": {
+    "file": "assets/AppLayout-Ibw4oj2Z.js",
     "name": "AppLayout",
     "imports": [
       "resources/js/app.tsx"
     ]
   },
-  "_clock-TjLfHDM9.js": {
-    "file": "assets/clock-TjLfHDM9.js",
+  "_clock-DSc2z3OR.js": {
+    "file": "assets/clock-DSc2z3OR.js",
     "name": "clock",
     "imports": [
-      "_AppLayout-BW3E-KgL.js"
+      "_AppLayout-Ibw4oj2Z.js"
     ]
   },
-  "_index-BuXfv8aI.js": {
-    "file": "assets/index-BuXfv8aI.js",
+  "_index-710vn6L1.js": {
+    "file": "assets/index-710vn6L1.js",
     "name": "index",
     "imports": [
-      "_AppLayout-BW3E-KgL.js",
+      "_AppLayout-Ibw4oj2Z.js",
       "resources/js/app.tsx"
     ],
     "assets": [
-      "assets/doctor-hero-Gv4ojQLO.jpg"
+      "assets/doctor-hero-CDeU9quQ.jpeg"
     ]
   },
-  "_message-circle-DaIFmfCE.js": {
-    "file": "assets/message-circle-DaIFmfCE.js",
+  "_message-circle-C2YiLcUQ.js": {
+    "file": "assets/message-circle-C2YiLcUQ.js",
     "name": "message-circle",
     "imports": [
-      "_AppLayout-BW3E-KgL.js"
+      "_AppLayout-Ibw4oj2Z.js"
     ]
   },
-  "_stethoscope-C9N71ydq.js": {
-    "file": "assets/stethoscope-C9N71ydq.js",
+  "_stethoscope-BirQjpEE.js": {
+    "file": "assets/stethoscope-BirQjpEE.js",
     "name": "stethoscope",
     "imports": [
-      "_AppLayout-BW3E-KgL.js"
+      "_AppLayout-Ibw4oj2Z.js"
     ]
   },
-  "_users-n12WfNUT.js": {
-    "file": "assets/users-n12WfNUT.js",
+  "_users-B6o090Ov.js": {
+    "file": "assets/users-B6o090Ov.js",
     "name": "users",
     "imports": [
-      "_AppLayout-BW3E-KgL.js"
+      "_AppLayout-Ibw4oj2Z.js"
     ]
   },
   "resources/css/app.css": {
@@ -50,63 +50,75 @@
     "src": "resources/css/app.css",
     "isEntry": true
   },
-  "resources/images/doctor-hero.jpg": {
-    "file": "assets/doctor-hero-Gv4ojQLO.jpg",
-    "src": "resources/images/doctor-hero.jpg"
+  "resources/images/doctor-hero.jpeg": {
+    "file": "assets/doctor-hero-CDeU9quQ.jpeg",
+    "src": "resources/images/doctor-hero.jpeg"
   },
   "resources/js/Pages/About.tsx": {
-    "file": "assets/About-YamhFvcv.js",
+    "file": "assets/About-BpMqBG4q.js",
     "name": "About",
     "src": "resources/js/Pages/About.tsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.tsx",
-      "_AppLayout-BW3E-KgL.js",
-      "_index-BuXfv8aI.js",
-      "_users-n12WfNUT.js",
-      "_message-circle-DaIFmfCE.js"
+      "_AppLayout-Ibw4oj2Z.js",
+      "_index-710vn6L1.js",
+      "_users-B6o090Ov.js",
+      "_message-circle-C2YiLcUQ.js"
+    ],
+    "css": [
+      "assets/app-Gv77lXDS.css"
     ]
   },
   "resources/js/Pages/Contact.tsx": {
-    "file": "assets/Contact-CvGw9v49.js",
+    "file": "assets/Contact-Bx5JHeQK.js",
     "name": "Contact",
     "src": "resources/js/Pages/Contact.tsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.tsx",
-      "_AppLayout-BW3E-KgL.js",
-      "_clock-TjLfHDM9.js",
-      "_message-circle-DaIFmfCE.js"
+      "_AppLayout-Ibw4oj2Z.js",
+      "_clock-DSc2z3OR.js",
+      "_message-circle-C2YiLcUQ.js"
+    ],
+    "css": [
+      "assets/app-Gv77lXDS.css"
     ]
   },
   "resources/js/Pages/Index.tsx": {
-    "file": "assets/Index-Nd-4C9EJ.js",
+    "file": "assets/Index-d5K4uAze.js",
     "name": "Index",
     "src": "resources/js/Pages/Index.tsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.tsx",
-      "_index-BuXfv8aI.js",
-      "_AppLayout-BW3E-KgL.js",
-      "_stethoscope-C9N71ydq.js",
-      "_clock-TjLfHDM9.js",
-      "_message-circle-DaIFmfCE.js"
+      "_index-710vn6L1.js",
+      "_AppLayout-Ibw4oj2Z.js",
+      "_stethoscope-BirQjpEE.js",
+      "_clock-DSc2z3OR.js",
+      "_message-circle-C2YiLcUQ.js"
+    ],
+    "css": [
+      "assets/app-Gv77lXDS.css"
     ]
   },
   "resources/js/Pages/Service.tsx": {
-    "file": "assets/Service-CQh4J9XA.js",
+    "file": "assets/Service-2gmn17Rz.js",
     "name": "Service",
     "src": "resources/js/Pages/Service.tsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.tsx",
-      "_stethoscope-C9N71ydq.js",
-      "_AppLayout-BW3E-KgL.js",
-      "_users-n12WfNUT.js"
+      "_stethoscope-BirQjpEE.js",
+      "_AppLayout-Ibw4oj2Z.js",
+      "_users-B6o090Ov.js"
+    ],
+    "css": [
+      "assets/app-Gv77lXDS.css"
     ]
   },
   "resources/js/app.tsx": {
-    "file": "assets/app-C0oOIlj9.js",
+    "file": "assets/app-5Kcj5oXa.js",
     "name": "app",
     "src": "resources/js/app.tsx",
     "isEntry": true,

@@ -3,9 +3,9 @@ import MainLayout from "@/layouts/AppLayout";
 import { MapPin, Phone, Mail, Clock, Send, ExternalLink, MessageCircle, AlertCircle } from "lucide-react";
 
 const Contact = () => {
-    const address = "Jl. Merdeka No. 45, Baning Kota, Sintang, Kalimantan Barat";
-    const googleMapsEmbedUrl = `https://maps.google.com/maps?q=${encodeURIComponent(address)}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
-    const googleMapsDirectUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+    const address = "3FJH+5WR, Jl. Kapitan Juhoi, Kapuas Kanan Hulu, Kec. Sintang, Kabupaten Sintang, Kalimantan Barat 78613";
+    const googleMapsEmbedUrl = `https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d997.4536138829905!2d111.4797818!3d0.079749!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31fe23004876c8e9%3A0x252f304d2f60e2ff!2sPraktek%20dr.%20Sitek!5e0!3m2!1sid!2sid!4v1776263604330!5m2!1sid!2sid`;
+    const googleMapsDirectUrl = `https://maps.app.goo.gl/6sskEdbokjkm44jG6`;
 
     return (
         <div className="font-sans text-slate-900 bg-white">
@@ -38,7 +38,7 @@ const Contact = () => {
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-slate-900 mb-1 text-nowrap">Telepon</h3>
-                                    <p className="text-slate-500 text-sm">+62 123 456 789</p>
+                                    <p className="text-slate-500 text-sm">+62 896-1394-3395</p>
                                 </div>
                             </div>
                             <div className="flex gap-5">
@@ -47,7 +47,7 @@ const Contact = () => {
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-slate-900 mb-1 text-nowrap">Email</h3>
-                                    <p className="text-slate-500 text-sm">dr.sitek@health.com</p>
+                                    <p className="text-slate-500 text-sm">praktekdrsitekferryanto@gmail.com</p>
                                 </div>
                             </div>
 
@@ -96,7 +96,7 @@ const Contact = () => {
                 <div className="mt-16 flex flex-col gap-6 items-center border-t border-slate-100 pt-10">
                     <div className="flex justify-center md:justify-start">
                         <a
-                            href="https://wa.me/62123456789"
+                            href="https://wa.me/6289613943395"
                             target="_blank"
                             rel="noreferrer"
                             className="flex items-center justify-center gap-3 bg-[#22c55e] hover:bg-[#1eb054] text-white font-bold py-4 px-10 rounded-2xl transition-all active:scale-95 shadow-lg shadow-green-100 w-full md:w-auto text-center"

@@ -36,15 +36,15 @@ const Footer = () => {
             <ul className="space-y-3 text-sm opacity-70">
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 flex-shrink-0 mt-0.5" />
-                Jl. Kesehatan No. 123, Sintang, Kalimantan Barat, Indonesia
+                3FJH+5WR, Jl. Kapitan Juhoi, Kapuas Kanan Hulu, Kec. Sintang, Kabupaten Sintang, Kalimantan Barat 78613
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="w-4 h-4 flex-shrink-0" />
-                +62 123 456 789
+                +62 896-1394-3395
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 flex-shrink-0" />
-                info@healthcareplus.com
+                praktekdrsitekferryanto@gmail.com
               </li>
             </ul>
           </div>

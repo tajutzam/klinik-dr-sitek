@@ -2,7 +2,7 @@ import { CheckCircle, Star, Shield, Award } from "lucide-react";
 import CountUp from 'react-countup';
 import { TypeAnimation } from 'react-type-animation';
 
-import doctorImg from "@/../images/doctor-hero.jpg";
+import doctorImg from "@/../images/doctor-hero.jpeg";
 
 const HeroSection = () => {
   return (
