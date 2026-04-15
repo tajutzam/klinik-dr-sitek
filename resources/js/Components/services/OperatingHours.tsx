@@ -79,9 +79,9 @@ const OperatingHours = () => {
 
                 {/* CTA Button */}
                 <div className="flex justify-center mb-12">
-                    <button className="bg-primary hover:opacity-90 text-white font-bold py-4 px-10 rounded-xl shadow-lg shadow-primary/20 transition-all active:scale-95">
+                    <a href='https://wa.me/6289613943395' target='_blank' className="bg-primary hover:opacity-90 text-white font-bold py-4 px-10 rounded-xl shadow-lg shadow-primary/20 transition-all active:scale-95">
                         Konsultasi Kesehatan Sekarang
-                    </button>
+                    </a>
                 </div>
 
                 {/* Tip Box */}

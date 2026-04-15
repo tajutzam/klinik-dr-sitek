@@ -1,48 +1,48 @@
 {
-  "_AppLayout-Ibw4oj2Z.js": {
-    "file": "assets/AppLayout-Ibw4oj2Z.js",
+  "_AppLayout-D_JSOgnJ.js": {
+    "file": "assets/AppLayout-D_JSOgnJ.js",
     "name": "AppLayout",
     "imports": [
       "resources/js/app.tsx"
     ]
   },
-  "_clock-DSc2z3OR.js": {
-    "file": "assets/clock-DSc2z3OR.js",
+  "_clock-G7pRqr_M.js": {
+    "file": "assets/clock-G7pRqr_M.js",
     "name": "clock",
     "imports": [
-      "_AppLayout-Ibw4oj2Z.js"
+      "_AppLayout-D_JSOgnJ.js"
     ]
   },
-  "_index-710vn6L1.js": {
-    "file": "assets/index-710vn6L1.js",
+  "_index-BUKaHzNa.js": {
+    "file": "assets/index-BUKaHzNa.js",
     "name": "index",
     "imports": [
-      "_AppLayout-Ibw4oj2Z.js",
+      "_AppLayout-D_JSOgnJ.js",
       "resources/js/app.tsx"
     ],
     "assets": [
       "assets/doctor-hero-CDeU9quQ.jpeg"
     ]
   },
-  "_message-circle-C2YiLcUQ.js": {
-    "file": "assets/message-circle-C2YiLcUQ.js",
+  "_message-circle-B7KMWqnx.js": {
+    "file": "assets/message-circle-B7KMWqnx.js",
     "name": "message-circle",
     "imports": [
-      "_AppLayout-Ibw4oj2Z.js"
+      "_AppLayout-D_JSOgnJ.js"
     ]
   },
-  "_stethoscope-BirQjpEE.js": {
-    "file": "assets/stethoscope-BirQjpEE.js",
+  "_stethoscope-BZZRDqXx.js": {
+    "file": "assets/stethoscope-BZZRDqXx.js",
     "name": "stethoscope",
     "imports": [
-      "_AppLayout-Ibw4oj2Z.js"
+      "_AppLayout-D_JSOgnJ.js"
     ]
   },
-  "_users-B6o090Ov.js": {
-    "file": "assets/users-B6o090Ov.js",
+  "_users-CCk8AuhG.js": {
+    "file": "assets/users-CCk8AuhG.js",
     "name": "users",
     "imports": [
-      "_AppLayout-Ibw4oj2Z.js"
+      "_AppLayout-D_JSOgnJ.js"
     ]
   },
   "resources/css/app.css": {
@@ -55,70 +55,70 @@
     "src": "resources/images/doctor-hero.jpeg"
   },
   "resources/js/Pages/About.tsx": {
-    "file": "assets/About-BpMqBG4q.js",
+    "file": "assets/About-D1iYiC7i.js",
     "name": "About",
     "src": "resources/js/Pages/About.tsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.tsx",
-      "_AppLayout-Ibw4oj2Z.js",
-      "_index-710vn6L1.js",
-      "_users-B6o090Ov.js",
-      "_message-circle-C2YiLcUQ.js"
+      "_AppLayout-D_JSOgnJ.js",
+      "_index-BUKaHzNa.js",
+      "_users-CCk8AuhG.js",
+      "_message-circle-B7KMWqnx.js"
     ],
     "css": [
       "assets/app-Gv77lXDS.css"
     ]
   },
   "resources/js/Pages/Contact.tsx": {
-    "file": "assets/Contact-Bx5JHeQK.js",
+    "file": "assets/Contact-g3CdIdS8.js",
     "name": "Contact",
     "src": "resources/js/Pages/Contact.tsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.tsx",
-      "_AppLayout-Ibw4oj2Z.js",
-      "_clock-DSc2z3OR.js",
-      "_message-circle-C2YiLcUQ.js"
+      "_AppLayout-D_JSOgnJ.js",
+      "_clock-G7pRqr_M.js",
+      "_message-circle-B7KMWqnx.js"
     ],
     "css": [
       "assets/app-Gv77lXDS.css"
     ]
   },
   "resources/js/Pages/Index.tsx": {
-    "file": "assets/Index-d5K4uAze.js",
+    "file": "assets/Index-OtOQ8-1U.js",
     "name": "Index",
     "src": "resources/js/Pages/Index.tsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.tsx",
-      "_index-710vn6L1.js",
-      "_AppLayout-Ibw4oj2Z.js",
-      "_stethoscope-BirQjpEE.js",
-      "_clock-DSc2z3OR.js",
-      "_message-circle-C2YiLcUQ.js"
+      "_index-BUKaHzNa.js",
+      "_AppLayout-D_JSOgnJ.js",
+      "_stethoscope-BZZRDqXx.js",
+      "_clock-G7pRqr_M.js",
+      "_message-circle-B7KMWqnx.js"
     ],
     "css": [
       "assets/app-Gv77lXDS.css"
     ]
   },
   "resources/js/Pages/Service.tsx": {
-    "file": "assets/Service-2gmn17Rz.js",
+    "file": "assets/Service-v8qd0pPc.js",
     "name": "Service",
     "src": "resources/js/Pages/Service.tsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.tsx",
-      "_stethoscope-BirQjpEE.js",
-      "_AppLayout-Ibw4oj2Z.js",
-      "_users-B6o090Ov.js"
+      "_stethoscope-BZZRDqXx.js",
+      "_AppLayout-D_JSOgnJ.js",
+      "_users-CCk8AuhG.js"
     ],
     "css": [
       "assets/app-Gv77lXDS.css"
     ]
   },
   "resources/js/app.tsx": {
-    "file": "assets/app-5Kcj5oXa.js",
+    "file": "assets/app-W0JrVYsH.js",
     "name": "app",
     "src": "resources/js/app.tsx",
     "isEntry": true,

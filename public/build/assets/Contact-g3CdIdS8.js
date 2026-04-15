@@ -1,4 +1,4 @@
-import{j as e}from"./app-5Kcj5oXa.js";import{c as s,a as l,P as r,b as i,M as n}from"./AppLayout-Ibw4oj2Z.js";import{C as d}from"./clock-DSc2z3OR.js";import{M as c}from"./message-circle-C2YiLcUQ.js";/* empty css            *//**
+import{j as e}from"./app-W0JrVYsH.js";import{c as s,a as l,P as r,b as i,M as n}from"./AppLayout-D_JSOgnJ.js";import{C as d}from"./clock-G7pRqr_M.js";import{M as c}from"./message-circle-B7KMWqnx.js";/* empty css            *//**
  * @license lucide-react v0.563.0 - ISC
  *
  * This source code is licensed under the ISC license.

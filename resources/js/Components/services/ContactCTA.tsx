@@ -13,7 +13,8 @@ const ContactCTA = () => {
 
                 <div className="flex justify-center">
                     <a
-                        href="#contact"
+                        href="https://wa.me/6289613943395"
+                        target='_blank'
                         className="bg-primary hover:opacity-90 text-white font-bold py-4 px-10 rounded-xl shadow-lg shadow-primary/20 transition-all active:scale-95 inline-block"
                     >
                         Hubungi Kami
